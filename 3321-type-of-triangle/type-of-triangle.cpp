@@ -3,7 +3,6 @@ public:
     string triangleType(vector<int>& nums) {
         sort(nums.begin(), nums.end());
 
-        // Check if valid triangle
         if (nums[0] + nums[1] <= nums[2])
             return "none";
 

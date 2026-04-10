@@ -1,26 +1,21 @@
 class Solution {
 public:
     bool canBeEqual(string s1, string s2) {
-        string even1 = "", odd1 = "";
-        string even2 = "", odd2 = "";
+        if (s1 == s2) return true;
 
-        // split into groups
-        for (int i = 0; i < 4; i++) {
-            if (i % 2 == 0) {
-                even1 += s1[i];
-                even2 += s2[i];
-            } else {
-                odd1 += s1[i];
-                odd2 += s2[i];
-            }
-        }
+ 
+        swap(s1[0], s1[2]);
+        if (s1 == s2) return true;
 
-        // sort and compare
-        sort(even1.begin(), even1.end());
-        sort(even2.begin(), even2.end());
-        sort(odd1.begin(), odd1.end());
-        sort(odd2.begin(), odd2.end());
+  
+        swap(s1[0], s1[2]);
 
-        return (even1 == even2 && odd1 == odd2);
+        swap(s1[1], s1[3]);
+        if (s1 == s2) return true;
+
+        swap(s1[0], s1[2]);
+        if (s1 == s2) return true;
+
+        return false;
     }
 };

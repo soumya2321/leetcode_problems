@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int climbStairs(int n) {
+        if(n<=2) return n;
+
+        int b=1;
+        int a=2;
+        for(int i=3;i<=n;i++){
+            int c=a+b;
+            b=a;a=c;
+        }
+        return a;
+        
+    }
+};

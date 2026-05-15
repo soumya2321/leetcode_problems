@@ -14,7 +14,7 @@ public:
         ListNode* rabt=head;
         ListNode* tor=head;
 
-
+            //even length       odd length
         while(rabt!=NULL and rabt ->next!=NULL){
             tor=tor->next;
             rabt=rabt->next->next;

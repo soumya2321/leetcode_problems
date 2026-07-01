@@ -1,52 +1,22 @@
-/*
 class Solution {
 public:
     bool isValid(string s) {
-        
-        stack<char>st;
-        for(int i=0;i<s.size();i++){
-            if(s[i]=='(' and s[i]=='[' and s[i]=='{'){
+        stack<char> st;
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] == '(' || s[i] == '{' || s[i] == '[') {
                 st.push(s[i]);
-            }
-            else{
-                if(st.empty()) return false;
-                if((s[i]==')' and st.top()=='(' or 
-                s[i]==']' and st.top()=='[' or 
-                s[i]=='}' and st.top()=='{')){
+            } else {
+                if (st.empty())
+                    return false;
+                if ((s[i] == '}' && st.top() == '{' ||
+                     s[i] == ']' && st.top() == '[' ||
+                     s[i] == ')' && st.top() == '(')) {
                     st.pop();
-                }
-                else{
+                } else {
                     return false;
                 }
             }
         }
-        return st.empty();    
-    }
-};
-
-*/
-class Solution {
-public:
-    bool isValid(string s) {
-        stack<char>st;
-        for(int i=0;i<s.size();i++){
-            if(s[i]=='('  or s[i]=='[' or s[i]=='{' ){
-                st.push(s[i]);
-            }
-            else{
-                if(st.empty()) return false;
-                if((s[i]==')' and st.top()=='(' 
-                or s[i]==']' and st.top()=='[' 
-                or s[i]=='}' and st.top()=='{') )
-                {
-                    st.pop();
-                }
-                
-                    else{
-                    return false;
-                }
-            }
-        }   
         return st.empty();
     }
 };

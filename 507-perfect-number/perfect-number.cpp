@@ -7,8 +7,7 @@ public:
                 sum+=i;
             }
         }
-        return sum==num;
+        return num==sum;
+        
     }
-
-
 };

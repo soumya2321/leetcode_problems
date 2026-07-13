@@ -4,10 +4,8 @@ public:
         sort(nums.begin(),nums.end());
         int n=nums.size();
 
-        int case1=nums[n-1]*nums[n-2]*nums[n-3];
-        int case2=nums[0]*nums[n-1]*nums[1];
-        return max(case1,case2);
-
-        
+        int c1=nums[n-1]*nums[n-2]*nums[n-3];
+        int c2=nums[0]*nums[1]*nums[n-1];
+        return max(c1,c2);
     }
 };

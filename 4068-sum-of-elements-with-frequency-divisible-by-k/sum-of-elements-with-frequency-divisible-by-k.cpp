@@ -6,16 +6,13 @@ public:
             freq[nums[i]]++;
         }
         int sum=0;
-        bool found=false;
         for(auto a :freq){
             if(a.second%k==0){
                 sum+=a.first*a.second;
-                found=true;
             }
 
         }
-        if(found) return sum;
-        else return 0;
+        return sum;
         
     }
 };

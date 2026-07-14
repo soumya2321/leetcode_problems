@@ -1,17 +1,25 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        if (s.length() != t.length()) {
-            return false;
+        int freq1[100000]={0};
+        int freq2[100000]={0};
+        int n=s.size();
+        int m=t.size();
+
+        for(int i=0;i<n;i++){
+            freq1[s[i]-'a']++;
         }
-
-        unordered_map<char, int> sCount, tCount;
-
-        for (int i = 0; i < s.length(); i++) {
-            sCount[s[i]] = 1 + sCount[s[i]];
-            tCount[t[i]] = 1 + tCount[t[i]];
+        for(int i=0;i<m;i++){
+            freq2[t[i]-'a']++;
         }
-
-        return sCount == tCount;        
+        bool isTrue=true;
+        for(int i=0;i<26;i++){
+            if(freq1[i]!=freq2[i]){
+                isTrue=false;
+                break;
+            }
+        }
+        return isTrue;
     }
+
 };

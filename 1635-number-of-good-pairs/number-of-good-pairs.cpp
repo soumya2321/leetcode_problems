@@ -1,14 +1,17 @@
 class Solution {
 public:
     int numIdenticalPairs(vector<int>& nums) {
-        int count=0;
+        unordered_map<int,int>freq;
         for(int i=0;i<nums.size();i++){
-            for(int j=0;j<nums.size();j++){
-                if(nums[i]==nums[j] && i<j){
-                    count++;
-                }
-            }
+            freq[nums[i]]++;
         }
-        return count;
+        int ans=0;
+        for(auto a:freq){
+            int f=a.second-1;
+            ans+=(f*(f+1)/2);
+        }
+        
+
+        return ans;
     }
 };

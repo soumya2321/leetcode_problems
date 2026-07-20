@@ -1,13 +1,18 @@
 class Solution {
 public:
     bool checkIfPangram(string sentence) {
-        unordered_set<char>sen;
-        for(auto c:sentence){
-            sen.insert(c);
-            if(sen.size()==26){
-                return true;
+        bool arr[26]={false};
+        for(int i=0;i<sentence.size();i++){
+            arr[sentence[i]-'a']=true;
+        }
+
+        bool isTrue=true;
+        for(int i=0;i<26;i++){
+            if(arr[i]==false){
+                isTrue=false;
+                break;
             }
         }
-        return false;
+        return isTrue;
     }
 };

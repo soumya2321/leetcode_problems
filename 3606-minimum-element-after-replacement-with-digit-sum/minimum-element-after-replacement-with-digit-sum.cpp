@@ -1,17 +1,19 @@
 class Solution {
 public:
     int minElement(vector<int>& nums) {
-        int n=nums.size();
-        int ans=INT_MAX;
-        for(int i:nums){
-            int dig=0;
-            while(i){
-                dig+=i%10;
-                i/=10;
+        //int rem;
+        int minn=INT_MAX;
+        for(int i=0;i<nums.size();i++){
+            int a=nums[i];
+            int sum=0;
+            while(a!=0){
+                int rem=a%10;
+                sum+=rem;
+                a/=10;
             }
-            ans=min(ans,dig);
+            minn=min(sum,minn);
         }
-        return ans;
+        return minn;
         
     }
 };

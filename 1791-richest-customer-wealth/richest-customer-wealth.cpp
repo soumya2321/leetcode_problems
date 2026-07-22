@@ -9,9 +9,8 @@ public:
             for(int j=0;j<m;j++){
                 sum+=accounts[i][j];
             }
-             maxx=max(maxx,sum);
+            maxx=max(maxx,sum);
         }
-        return maxx;
-        
+       return maxx; 
     }
 };

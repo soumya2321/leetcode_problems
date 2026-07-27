@@ -1,15 +1,14 @@
 class Solution {
 public:
     vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
-        int n=names.size();
+        vector<string>ans;
+        map<int,string,greater<int>>myMap;
         for(int i=0;i<names.size();i++){
-            for(int j=0;j<n-i-1;j++){
-                if(heights[j]<heights[j+1]){
-                    swap(heights[j],heights[j+1]);
-                    swap(names[j],names[j+1]);
-                }
-            }
+            myMap[heights[i]]=names[i];
         }
-        return names;
+        for(auto a:myMap){
+            ans.push_back(a.second);
+        }
+        return ans;
     }
 };

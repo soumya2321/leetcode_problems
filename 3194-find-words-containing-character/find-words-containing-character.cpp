@@ -7,10 +7,10 @@ public:
                 if(words[i][j]==x){
                     res.push_back(i);
                     break;
-
                 }
             }
         }
-        return res;;
+        return res;
+        
     }
 };

@@ -1,14 +1,14 @@
 class Solution {
 public:
     char repeatedCharacter(string s) {
-        string res;
-        for(auto c: s){
-            res[c]++;
-            if(res[c]==2){
-                return c;
+        unordered_map<char,int>(res);
+        for(int i=0;i<s.size();i++){
+            res[s[i]]++;
+            if(res[s[i]]==2){
+                return s[i];
             }
         }
-        return 0;
+        return '\0';
         
     }
 };

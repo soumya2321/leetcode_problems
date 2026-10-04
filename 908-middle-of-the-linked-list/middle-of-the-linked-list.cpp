@@ -11,14 +11,13 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        ListNode* rabbit=head;
-        ListNode* tortise=head;
+        ListNode* rab =head;
+        ListNode* tor=head;
 
-        while(rabbit!=NULL && rabbit->next!=NULL){
-            tortise=tortise->next;
-            rabbit=rabbit->next->next;
+        while(rab!=NULL && rab->next!=NULL){
+            rab=rab->next->next;
+            tor=tor->next;
         }
-        return tortise;
-        
+        return tor;
     }
 };
